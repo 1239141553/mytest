@@ -9,8 +9,10 @@ import com.shop.pojo.SpecificationOptionExample;
 import com.shop.pojocom.SpecificationCom;
 import com.shop.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @Transactional
@@ -20,12 +22,17 @@ public class SpecificationServiceImpl implements SpecificationService {
     private SpecificationMapper specificationMapper;
     @Autowired
     private SpecificationOptionMapper specificationOptionMapper;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     public void addSpecification(SpecificationCom specificationCom){
       specificationMapper.insert(specificationCom.getSpecification());
+      redisTemplate.boundHashOps("specificationCom").delete(
+              specificationCom.getSpecification().getId());
         for (SpecificationOption specificationOption:
              specificationCom.getSpecificationOptions()) {
             specificationOptionMapper.insert(specificationOption);
+            redisTemplate.boundHashOps("specificationCom").delete(specificationOption.getId());
         }
     }
 
