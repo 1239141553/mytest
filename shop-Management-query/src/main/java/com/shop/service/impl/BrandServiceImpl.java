@@ -7,13 +7,12 @@ import com.shop.pojo.Brand;
 import com.shop.pojo.ResultPage;
 import com.shop.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Map;
+
+
 
 @Service
 public class BrandServiceImpl implements BrandService {
