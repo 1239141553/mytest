@@ -1,0 +1,18 @@
+server:
+  port: 8888   # 端口号
+spring:
+  application:
+    name: zuul-com.shop  # 网关服务名称
+eureka:
+  client:
+    #    eureka注册中心地址
+    service-url:
+      defaultZone: http://127.0.0.1:8762/eureka
+zuul:
+  routes:
+    api-a:
+      path: /shop-query/**
+      service-id: shop-query
+    api-b:
+      path: /shop-edit/**
+      service-id: shop-edit
