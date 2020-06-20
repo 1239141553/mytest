@@ -68,7 +68,7 @@
 		<table schema="" tableName="user"></table>
  		这里配置的是不生成Example文件 -->
 
-        <table schema="" tableName="tb_type_template" domainObjectName="TypeTemplate"/>
-
+        <table schema="" tableName="tb_item_cat" domainObjectName="ItemCat"/>
+        <table schema="" tableName="tb_item" domainObjectName="Item"/>
     </context>
 </generatorConfiguration>

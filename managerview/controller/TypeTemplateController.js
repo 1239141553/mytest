@@ -39,7 +39,6 @@ app.controller('TypeTemplateController',function($scope,$controller,TypeTemplate
 	$scope.queryTypeTemplateById = function(TypeTemplate_id){
 		TypeTemplateService.queryTypeTemplateById(TypeTemplate_id).success(function(response){
 			$scope.entity=response;
-			
 			$scope.entity.brandIds = JSON.parse($scope.entity.brandIds);
 			$scope.entity.specIds = JSON.parse($scope.entity.specIds);
 			$scope.entity.customAttributeItems = JSON.parse($scope.entity.customAttributeItems);
@@ -58,7 +57,6 @@ app.controller('TypeTemplateController',function($scope,$controller,TypeTemplate
 	  }
 	}
 	
-
 	$scope.search = function(pageNum,pageSize){
 		TypeTemplateService.queryTypeTemplateByPage(pageNum,pageSize).success(function(response){
 			$scope.TypeTemplateList=response.rows;
@@ -71,10 +69,12 @@ app.controller('TypeTemplateController',function($scope,$controller,TypeTemplate
 	}
 	
 	$scope.addTableRows=function(){	
+		alert("增加");
 		$scope.entity.customAttributeItems.push({});
 	}
 	
-	$scope.deleteTableRows=function(index){		
+	$scope.deleteTableRows=function(index){	
+		alert("删除");
 		$scope.entity.customAttributeItems.splice(index,1);
 	}
 	
