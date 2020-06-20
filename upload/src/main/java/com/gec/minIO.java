@@ -1,4 +1,4 @@
-package main.java.com.gec;
+package com.gec;
 
 import io.minio.MinioClient;
 import io.minio.policy.PolicyType;

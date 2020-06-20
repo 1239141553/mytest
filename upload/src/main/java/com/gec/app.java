@@ -1,4 +1,4 @@
-package main.java.com.gec;
+package com.gec;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
