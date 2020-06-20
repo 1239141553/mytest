@@ -1,4 +1,4 @@
-package com.gec;
+package main.java.com.gec;
 
 public class RespBean {
     private Integer code;    //错误代码

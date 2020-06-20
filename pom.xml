@@ -14,6 +14,7 @@
         <module>shop-Management-query</module>
         <module>shop-Management-edit</module>
         <module>shop-Management-zuul</module>
+        <module>upload</module>
     </modules>
 
     <parent>
