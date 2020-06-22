@@ -1,6 +1,8 @@
 package com.shop.pojo;
 
-public class ItemCat {
+import java.io.Serializable;
+
+public class ItemCat implements Serializable {
     private Long id;
 
     private Long parentId;

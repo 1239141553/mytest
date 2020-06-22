@@ -60,6 +60,25 @@ spring:
         max-wait: -1ms
         max-idle: 8
         min-idle: 0
+---
+spring:
+   #（3）消息中间件
+   activemq:
+     # 端口
+     broker-url: tcp://127.0.0.1:61616
+     # 默认代理URL是否应该在内存中。如果指定了显式代理，则忽略此值。
+     close-timeout: 15s
+     # 默认代理URL是否应该在内存中。如果指定了显式代理，则忽略此值。
+     in-memory: true
+     # 是否在回滚回滚消息之前停止消息传递。这意味着当启用此命令时，消息顺序不会被保留。
+     non-blocking-redelivery: false
+     #用户名
+     user: admin
+     #密码
+     password: admin
+     #默认情况下activemq提供的是queue模式，若要使用topic模式需要配置下面配置
+   jms:
+     pub-sub-domain: true
 #分页
 pagehelper:
   helperDialect: mysql

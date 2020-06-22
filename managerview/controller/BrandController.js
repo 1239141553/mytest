@@ -19,21 +19,13 @@ app.controller('BrandController',function($scope,$controller,BrandService){
 		});
 	}
 	
+  
 	$scope.queryBrandById = function(brand_id){	
 		BrandService.queryBrandById(brand_id).success(function(response){
 			$scope.entity=response;
 		});
 	}
 	
-	$scope.selectId = [];
-	$scope.delManyBrand=function(event,brand_id){					
-		if(event.target.checked==true){
-			$scope.selectId.push(brand_id);
-		}else{
-		 	var index = $scope.selectId.indexOf(brand_id);
-			$scope.selectId.splice(index,1);
-		}
-	}
 		
 	$scope.dele=function(){	
 		if(confirm("是否确认删除")){

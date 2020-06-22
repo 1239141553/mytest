@@ -1,9 +1,10 @@
 package com.shop.pojo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemCatExample {
+public class ItemCatExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

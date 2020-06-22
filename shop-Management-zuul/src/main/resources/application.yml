@@ -5,14 +5,19 @@ spring:
     name: zuul-com.shop  # 网关服务名称
 eureka:
   client:
-    #    eureka注册中心地址
     service-url:
-      defaultZone: http://127.0.0.1:8762/eureka
+      defaultZone: http://127.0.0.1:8762/eureka     #eureka注册中心地址
 zuul:
   routes:
     api-a:
-      path: /shop-query/**
-      service-id: shop-query
+      path: /auth/**
+      service-id: Auth-server
     api-b:
-      path: /shop-edit/**
+      path: /order/**
+      service-id: resource-server
+    api-c:
+      path: /order/shop-query/**
+      service-id: shop-query
+    api-d:
+      path: /order/shop-edit/**
       service-id: shop-edit

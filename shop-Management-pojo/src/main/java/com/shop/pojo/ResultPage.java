@@ -1,8 +1,9 @@
 package com.shop.pojo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ResultPage {
+public class ResultPage implements Serializable {
     private List rows;
     private Long total;
 

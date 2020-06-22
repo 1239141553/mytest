@@ -77,7 +77,7 @@
 			                      </thead>
 			                      <tbody>
 			                          <tr ng-repeat="TypeTemplate in TypeTemplateList">
-			                              <td><input  type="checkbox" ng-click="delManyTypeTemplate($event,TypeTemplate.id)"></td>			                              
+			                              <td><input  type="checkbox" ng-click="delMany($event,TypeTemplate.id);"></td>			                              
 				                          <td>{{TypeTemplate.id}}</td>
 									      <td>{{TypeTemplate.name}}</td>
 									      <td>{{jsonToString(TypeTemplate.brandIds,'text')}}</td>

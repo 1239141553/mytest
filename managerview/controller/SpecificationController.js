@@ -1,4 +1,7 @@
-app.controller('SpecificationController',function($scope,SpecificationService){
+app.controller('SpecificationController',function($scope,$controller,SpecificationService){
+	
+	//继承时必须要在HTML中引用
+	$controller('baseController',{$scope:$scope});//继承
 	
 	$scope.save = function(){	
 		var serviceObj = null;
@@ -15,7 +18,16 @@ app.controller('SpecificationController',function($scope,SpecificationService){
 			}
 		});
 	}
-	
+	$scope.selectIds=[];//选中的ID集合 
+    //更新复选
+    $scope.delManySpecification = function($event, id) {        
+        if($event.target.checked){//如果是被选中,则增加到数组
+            $scope.selectIds.push( id);            
+        }else{
+            var idx = $scope.selectIds.indexOf(id);
+            $scope.selectIds.splice(idx, 1);//删除 
+        }
+    }
 	$scope.querySpecificationById = function(specification_id){	
 		SpecificationService.querySpecificationById(specification_id).success(function(response){
 			$scope.entity=response;

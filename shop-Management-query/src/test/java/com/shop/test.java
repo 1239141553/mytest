@@ -11,6 +11,7 @@ import java.util.Map;
 
 @SpringBootTest
 public class test {
+
     @Autowired
     private TbBrandMapper tbBrandMapper;
     @Autowired
@@ -23,5 +24,9 @@ public class test {
     public  void  test2(){
         String kk = stringRedisTemplate.opsForValue().get("kk");
         System.out.println(kk);
+    }
+
+    @Test
+    public  void  test3(){
     }
 }

@@ -9,6 +9,10 @@ import com.shop.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -25,12 +29,13 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public ResultPage queryAllBrand(int pageNum,int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        Page<Brand> page = (Page<Brand>) tbBrandMapper.selectByExample(null);
-        ResultPage resultPage = new ResultPage();
-        resultPage.setRows(page.getResult());
-        resultPage.setTotal(page.getTotal());
-        return resultPage;
+
+            PageHelper.startPage(pageNum, pageSize);
+            Page<Brand> page = (Page<Brand>) tbBrandMapper.selectByExample(null);
+            ResultPage resultPage = new ResultPage();
+            resultPage.setRows(page.getResult());
+            resultPage.setTotal(page.getTotal());
+            return resultPage;
     }
 
     @Override

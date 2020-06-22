@@ -10,5 +10,4 @@ public interface TypeTemplateService {
     ResultPage queryTypeTemplateByPage(int pageNum, int pageSize);
     TypeTemplate queryTypeTemplateById(Long id);
     List<TypeTemplate> queryAllTypeTemplate();
-
 }

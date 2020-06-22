@@ -17,18 +17,16 @@ app.controller('baseController' ,function($scope){
           }
     }; 
     
-    
-    $scope.selectIds=[];//选中的ID集合 
+    $scope.selectId=[];//选中的ID集合 
     //更新复选
-    $scope.updateSelection = function($event, id) {        
+    $scope.delMany = function($event, id) {  
         if($event.target.checked){//如果是被选中,则增加到数组
-            $scope.selectIds.push( id);            
+            $scope.selectId.push(id);            
         }else{
-            var idx = $scope.selectIds.indexOf(id);
-            $scope.selectIds.splice(idx, 1);//删除 
+            var index = $scope.selectId.indexOf(id);
+            $scope.selectId.splice(index, 1);//删除 
         }
     }
-    
     
     $scope.jsonToString=function(jsonString,key){
         
